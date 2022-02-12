@@ -12,6 +12,7 @@ class Teams(models.Model):
         T6 = "SRH",_("Sun Risers Hyderabad")
         T7 = "KKR",_("Kolkata Knight Riders")
         T8 = "PBK",_("Punjab Kings")
+        
 
     TeamId     = models.TextField(max_length=4,primary_key=True)
     TeamName   = models.TextField(max_length=10,choices=TeamChoices.choices)
@@ -31,5 +32,6 @@ class Players(models.Model):
     description= models.TextField(max_length=100,choices=(('BT',_("Batsman")),
     ('BO',_("Bowler")),
     ('AR',_("All Rounder"))))
+    pic = models.ImageField(upload_to='players_pics',default='default-player.png')
     def __str__(self):
         return self.name
