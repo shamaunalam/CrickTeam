@@ -102,7 +102,7 @@ body {
       content: '';
       display: block;
       opacity: .6;
-      background-color: #000;
+      background-color: rgba(102, 98, 98, 0);
       -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
       border-radius: 10px;
