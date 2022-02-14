@@ -12,14 +12,16 @@
     
 
     <div class="wrapper">
-        <h1>IPL 2022 All Teams</h1>
+        <h1>IPL 2020 All Teams</h1>
         <div class="cols">
                 {% for team in teams %}
+                
                   <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <a href="{% url 'teamprofile' pk=team.TeamId %}">
                       <div class="container">
                           <div class="front" style="background-image: url({{team.TeamIcon.url}})">
                               <div class="inner">
-                                    <p>{{team.TeamName}}</p>
+                                    <p>{{team.TeamId}}</p>
                                     <span>Won : {{team.TourWon}}</span>
                               </div>
                           </div>
@@ -30,9 +32,10 @@
                               </div>
                           </div>
                       </div>
+                    </a>
                   </div>
-                {% endfor %}
-                  
+                
+                {% endfor %}                  
         </div>
     </div>
 

@@ -4,18 +4,18 @@ from django.utils.translation import gettext_lazy as _
 class Teams(models.Model):
 
     class TeamChoices(models.TextChoices):
-        T1 = 'RR',_("Rajsthan Royals")
-        T2 = 'MI',_("Mumbai Indians")
-        T3 = 'RCB',_("Royal Challengers Bangalore")
-        T4 = "CSK",_("Chennai Super Kings")
-        T5 = "DC",_("Delhi Capitals")
-        T6 = "SRH",_("Sun Risers Hyderabad")
-        T7 = "KKR",_("Kolkata Knight Riders")
-        T8 = "PBK",_("Punjab Kings")
+        T1 = 'Rajsthan Royals',_("Rajsthan Royals")
+        T2 = 'Mumbai Indians',_("Mumbai Indians")
+        T3 = 'Royal Challengers Bangalore',_("Royal Challengers Bangalore")
+        T4 = "Chennai Super Kings",_("Chennai Super Kings")
+        T5 = "Delhi Capitals",_("Delhi Capitals")
+        T6 = "Sun Risers Hyderabad",_("Sun Risers Hyderabad")
+        T7 = "Kolkata Knight Riders",_("Kolkata Knight Riders")
+        T8 = "Punjab Kings",_("Punjab Kings")
         
 
     TeamId     = models.TextField(max_length=4,primary_key=True)
-    TeamName   = models.TextField(max_length=10,choices=TeamChoices.choices)
+    TeamName   = models.TextField(max_length=100,choices=TeamChoices.choices)
     TeamIcon   = models.ImageField(upload_to='icons',blank=True)
     TopBatsman = models.TextField(max_length=100,blank=True)
     TopBowler  = models.TextField(max_length=100,blank=True)
