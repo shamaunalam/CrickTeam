@@ -5,14 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/searchbar.css' %}" rel="stylesheet" media="all">
+    <!-- <link href="{% static 'css/navbar.css' %}" rel="stylesheet" media="all"> -->
     <link href="{% static 'css/allteam.css' %}" rel="stylesheet" media="all">
-
     <title>All Teams</title>
 </head>
 <body>
- 
+
+  <div id="cover">
+    <form method="get" action="">
+      <div class="tb">
+        <div class="td"><input type="text" placeholder="Search" required></div>
+        <div class="td" id="s-cover">
+          <button type="submit">
+            <div id="s-circle"></div>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+<!--   <nav class="navbar">
+    <div id="trapezoid">
+
+      
+      <a class="sub-home" href="#">Home</a>
+      <a href="#About" class="expandHome">About</a>
+       <div class="subnav">
+          <button class="subnavbtn">Clients<i class="fa fa-caret-down"></i></button>
+          <div class="subnav-content">
+            <div id="subnav-trapezoid">
+              <a href="#Clients">Burger King</a>
+              <a href="#Clients">Southwest Airlines</a>
+              <a href="#Clients">Levi Strauss</a>
+            </div>
+         </div>
+        </div>
+    
+       <div class="subnav">
+          <button class="subnavbtn">Services<i class="fa fa-caret-down"></i></button>
+          <div class="subnav-content">
+            <div class="subnav-trapezoid">
+                <a href="#Services">Print Design</a>
+                <a href="#Services">Web Design</a>
+                <a href="#Services">Mobile App Development</a>
+            </div>
+          </div>
+        </div>
+      <a href="https://codepen.io/pec-man" class="expandHome">Contact</a>
+    </div>
+  </nav>
+
+ -->
+
     <div class="wrapper">
-        <h1>IPL 2020 All Teams</h1>
+        <!-- <h1>IPL 2020 All Teams</h1> -->
         <div class="cols">
                 {% for team in teams %}
                 
@@ -38,6 +85,35 @@
                 {% endfor %}                  
         </div>
     </div>
-    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- <script>
+
+            $('.expandHome').mouseover(function() {
+              $('.sub-home').css({
+                    'display': 'block'
+                }); 
+            });
+            $('.subnavbtn').mouseover(function() {
+              $('.sub-home').css({
+                    'display': 'none'
+                }); 
+            });
+
+            $('#trapezoid').mouseleave(function() {
+              $('#trapezoid').css({
+                    'margin-top': '-53px'
+                }); 
+                $('.sub-home').css({
+                    'display': 'none'
+                }); 
+            }).mouseenter(function() {
+              $('#trapezoid').css({
+                    'margin-top': '0px'
+                }); 
+            });
+              
+
+    </script>
+ -->
 </body>
 </html>
