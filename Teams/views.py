@@ -21,7 +21,8 @@ def TeamProfile(request,pk):
     return render(request,'teamprofile.html',{'players':players,'team':team})
 
 @api_view(["GET"])
-def AllPlayersAPI(request):
-    players = Players.objects.all()
+def AllPlayersAPI(request,pk):
+    team = Teams.objects.get(TeamId=pk)
+    players = Players.objects.filter(team=team)
     serializer = PlayersSerializer(players,many=True) 
     return Response(serializer.data)

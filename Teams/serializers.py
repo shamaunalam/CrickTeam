@@ -6,3 +6,4 @@ class PlayersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Players
         exclude=['pic']
+        
